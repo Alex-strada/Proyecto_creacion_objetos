@@ -1,59 +1,58 @@
-Proyecto ZooManager – Sistema básico de animales en C++
+# Proyecto **ZooManager** – Sistema básico de animales en C++
 
-Este proyecto es una demostración creada como parte de la materia Pensamiento Orientado a Objetos. Su propósito es modelar animales de un zoológico mediante clases independientes en C++, mostrando cómo representar objetos reales y operar con ellos desde un programa principal.
+Este proyecto forma parte de la materia *Pensamiento Orientado a Objetos* y modela animales de un zoológico mediante clases en C++.
 
-Contexto
+---
+
+## Contexto
 
 El proyecto simula un sistema básico de administración de animales dentro de un zoológico.
-Para ello, se desarrollaron tres clases independientes, cada una representando un animal distinto:
 
-Gorila
+Se desarrollaron tres clases independientes, cada una representando un animal distinto:
 
-León
+- **Gorila**
+- **León**
+- **Avestruz**
 
-Avestruz
+Cada clase incluye:
 
-Cada clase contiene:
+- Atributos básicos como nombre y edad  
+- Métodos para mostrar información  
+- Métodos para alimentar al animal con un mensaje específico de su especie  
 
-Atributos básicos como nombre y edad
+---
 
-Métodos para mostrar información
-
-Métodos para alimentar al animal con mensajes específicos de su especie
-
-No existe una clase madre ni un sistema de herencia; todas las clases son independientes y se usan desde un archivo main_zoo.cpp.
-
-Funcionalidad
+## Funcionalidad
 
 El programa permite:
 
-Crear objetos de tipo Gorila, León y Avestruz
+- Crear objetos de las clases `Gorila`, `Leon` y `Avestruz`
+- Mostrar la información de cada animal
+- Llamar a su método `alimentar()`
+- Demostrar interacción básica entre objetos desde un archivo principal en consola
 
-Mostrar la información de cada animal
+El sistema funciona completamente por consola usando C++ estándar.
 
-Llamar a su método alimentar()
+---
 
-Demostrar la interacción básica entre objetos y un archivo principal en consola
+## Compilación y ejecución
 
-El sistema funciona 100% por consola usando C++ estándar.
+### Compilación rápida (incluyendo todo desde el main)
 
-Consideraciones
-
-El programa corre en cualquier sistema operativo que tenga un compilador C++ estándar.
-
-Compilar (modo simple, usando includes en el main):
 g++ main_zoo.cpp -o zoo
 
-Compilar (modo profesional generando .o):
-g++ -c gorila.cpp
-g++ -c leon.cpp
-g++ -c avestruz.cpp
-g++ -c main_zoo.cpp
+### Compilación por módulos
+
+g++ -c gorila.cpp  
+g++ -c leon.cpp  
+g++ -c avestruz.cpp  
+g++ -c main_zoo.cpp  
 g++ gorila.o leon.o avestruz.o main_zoo.o -o zoo
 
-Ejecutar en Linux / macOS:
-./zoo
+### Ejecutar
 
-Ejecutar en Windows:
+**En macOS / Linux:**  
+./zoo  
+
+**En Windows:**  
 zoo.exe
-
