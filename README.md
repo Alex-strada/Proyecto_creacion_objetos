@@ -13,6 +13,7 @@ Se desarrollaron tres clases independientes, cada una representando un animal di
 - **Gorila**
 - **León**
 - **Avestruz**
+- **Animal**
 
 Cada clase incluye:
 
@@ -26,7 +27,7 @@ Cada clase incluye:
 
 El programa permite:
 
-- Crear objetos de las clases `Gorila`, `Leon` y `Avestruz`
+- Crear objetos de las clases `Animal`,`Gorila`, `Leon` y `Avestruz`
 - Mostrar la información de cada animal
 - Llamar a su método `alimentar()`
 - Demostrar interacción básica entre objetos desde un archivo principal en consola
@@ -43,11 +44,12 @@ g++ main_zoo.cpp -o zoo
 
 ### Compilación por módulos
 
+g++ -c animal.cpp
 g++ -c gorila.cpp  
 g++ -c leon.cpp  
 g++ -c avestruz.cpp  
 g++ -c main_zoo.cpp  
-g++ gorila.o leon.o avestruz.o main_zoo.o -o zoo
+g++ animal.o gorila.o leon.o avestruz.o main_zoo.o -o zoo
 
 ### Ejecutar
 
