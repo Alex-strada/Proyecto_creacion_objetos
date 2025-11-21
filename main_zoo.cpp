@@ -13,9 +13,7 @@ using namespace std;
 #include "gorila.cpp"
 #include "leon.cpp"
 #include "avestruz.cpp"
-#include "Gorila.h"
-#include "Leon.h"
-#include "Avestruz.h"
+
 
 
 int main() {
