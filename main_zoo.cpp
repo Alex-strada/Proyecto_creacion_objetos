@@ -10,6 +10,7 @@
 using namespace std;
 
 // Importamos los archivos donde están las clases
+#include "animal.cpp"
 #include "gorila.cpp"
 #include "leon.cpp"
 #include "avestruz.cpp"
@@ -26,15 +27,21 @@ int main() {
 
     // Creamos un avestruz
     Avestruz a("Rappi dash", 5);
+    
+    Animal x("Animal", 3);
+ 
+
 
     // Mostrar info de cada animal
     cout << "\n--- Información de los animales ---\n";
+    x.mostrar_info();
     g.mostrar_info();
     l.mostrar_info();
     a.mostrar_info();
 
     // Alimentar a los animales
     cout << "\n--- Alimentando animales ---\n";
+    x.alimentar();
     g.alimentar();
     l.alimentar();
     a.alimentar();
