@@ -38,23 +38,18 @@ El sistema funciona completamente por consola usando C++ estándar.
 
 ## Compilación y ejecución
 
-### Compilación rápida (incluyendo todo desde el main)
 
-g++ main_zoo.cpp -o zoo
+### Compilación Todos
 
-### Compilación por módulos
+g++ Animal.cpp Gorila.cpp Leon.cpp Avestruz.cpp Zoologico.cpp main_zoo.cpp -o zoo
 
-g++ -c animal.cpp
-g++ -c gorila.cpp  
-g++ -c leon.cpp  
-g++ -c avestruz.cpp  
-g++ -c main_zoo.cpp  
-g++ animal.o gorila.o leon.o avestruz.o main_zoo.o -o zoo
+### ENLAZAR TODOS
 
-### Ejecutar
+g++ Animal.o Gorila.o Leon.o Avestruz.o zoo.o main_zoo.o -o zoo
 
-**En macOS / Linux:**  
+### Ejecutar todo el programa
+
+**En macOS 
 ./zoo  
 
-**En Windows:**  
-zoo.exe
+
