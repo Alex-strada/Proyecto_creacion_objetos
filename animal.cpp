@@ -3,31 +3,14 @@
 //  
 //
 //  Created by Alejandro Estrada Pérez on 21/11/25.
-//g++ animal.cpp -o animal
+//g++ -c Animal.cpp
 
-
-#include <iostream>
-#include <string>
 #include "animal.hpp"
-using namespace std;
 
-class Animal {
-    
-private:
-    string nombre;
-    int edad;
+Animal::Animal(string n, int e) : nombre(n), edad(e) {}
 
-public:
-    // Constructor
-    Animal(string n, int e) : nombre(n), edad(e) {}
+string Animal::getNombre() const { return nombre; }
+int    Animal::getEdad()   const { return edad; }
 
-    // Métodos
-    void mostrar_info() {
-        cout << "Animal | Nombre: " << nombre
-             << " | Edad: " << edad << " años" << endl;
-    }
-
-    void alimentar() {
-        cout << nombre << " está siendo alimentado." << endl;
-    }
-};
+void Animal::setNombre(string n) { nombre = n; }
+void Animal::setEdad(int e) { edad = e; }

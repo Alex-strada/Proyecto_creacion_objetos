@@ -1,31 +1,16 @@
 //  avestruz.cpp
-//  COMPILAR: g++ -c avestruz.cpp
+//  COMPILAR: g++ -c Avestruz.cpp
 //  Created by Alejandro Estrada Pérez on 13/11/25.
 
 
-#include <iostream>
-#include <string>
-using namespace std;
+#include "avestruz.hpp"
 
-// Clase que representa un avestruz
-class Avestruz {
-private:
-    string nombre;  // Nombre del avestruz
-    int edad;       // Edad del avestruz
+Avestruz::Avestruz(string n, int e) : Animal(n, e) {}
 
-public:
-    // Constructor que inicializa los atributos
-    Avestruz(string n, int e) : nombre(n), edad(e) {}
+string Avestruz::alimentar() const {
+    return "🦤 El avestruz " + nombre + " está comiendo granos y vegetales.";
+}
 
-    // Método para alimentar al avestruz
-    void alimentar() {
-        cout << "🦤 Alimentando al avestruz " << nombre
-             << " con granos y vegetales." << endl;
-    }
-
-    // Muestra la información del avestruz
-    void mostrar_info() {
-        cout << "Avestruz | Nombre: " << nombre
-             << " | Edad: " << edad << " años" << endl;
-    }
-};
+string Avestruz::mostrar_info() const {
+    return "Avestruz | Nombre: " + nombre + " | Edad: " + to_string(edad);
+}

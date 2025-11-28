@@ -1,31 +1,17 @@
 //  leon.cpp
 //  Created by Alejandro Estrada Pérez on 13/11/25.
-//  COMPILAR: g++ -c leon.cpp
+//  COMPILAR: g++ -c Leon.cpp
 
 
-#include <iostream>
-#include <string>
-using namespace std;
 
-// Clase que representa un león
-class Leon {
-private:
-    string nombre;  // Nombre del león
-    int edad;       // Edad del león
+#include "leon.hpp"
 
-public:
-    // Constructor que asigna valores a los atributos
-    Leon(string n, int e) : nombre(n), edad(e) {}
+Leon::Leon(string n, int e) : Animal(n, e) {}
 
-    // Método para alimentar al león
-    void alimentar() {
-        cout << "🦁 Alimentando al león " << nombre
-             << " con carne fresca." << endl;
-    }
+string Leon::alimentar() const {
+    return "🦁 El león " + nombre + " está comiendo carne fresca.";
+}
 
-    // Muestra la información del león
-    void mostrar_info() {
-        cout << "León | Nombre: " << nombre
-             << " | Edad: " << edad << " años" << endl;
-    }
-};
+string Leon::mostrar_info() const {
+    return "León | Nombre: " + nombre + " | Edad: " + to_string(edad);
+}

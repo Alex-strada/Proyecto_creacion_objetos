@@ -1,50 +1,39 @@
 //  main_zoo.cpp
-//  COMPILAR: g++ main_zoo.cpp -o zoo
-//  EJECUTAR: ./zoo
-//  ENLAZAR: g++ gorila.o leon.o avestruz.o main_zoo.o -o zoo
+//  COMPILAR INDIVIDUAL: g++ -c main_zoo.cpp
+//  COMPILAR TODOS: g++ Animal.cpp Gorila.cpp Leon.cpp Avestruz.cpp Zoologico.cpp main_zoo.cpp -o zoo
+//  ENLAZAR TODOS: g++ Animal.o Gorila.o Leon.o Avestruz.o zoo.o main_zoo.o -o zoo
+//  EJECUTAR TODO EL PROGRAMA: ./zoo
 //  Created by Alejandro Estrada Pérez on 13/11/25.
-
 
 
 #include <iostream>
 using namespace std;
 
-// Importamos los archivos donde están las clases
-#include "animal.cpp"
-#include "gorila.cpp"
-#include "leon.cpp"
-#include "avestruz.cpp"
-
-
+#include "gorila.hpp"
+#include "leon.hpp"
+#include "avestruz.hpp"
+#include "Zoologico.hpp"
 
 int main() {
 
-    // Creamos un gorila con nombre y edad
+    // Creación de animales
     Gorila g("King Kong", 12);
+    Leon   l("Simba", 8);
+    Avestruz a("Rappi Dash", 5);
 
-    // Creamos un león
-    Leon l("Simba", 8);
+    // Creación del zoológico
+    Zoologico zoo;
 
-    // Creamos un avestruz
-    Avestruz a("Rappi dash", 5);
-    
-    Animal x("Animal", 3);
- 
+    // Agregación animales (agregación)
+    zoo.agregarAnimal(&g);
+    zoo.agregarAnimal(&l);
+    zoo.agregarAnimal(&a);
 
+    cout << "\n--- Información de animales ---\n";
+    zoo.mostrarTodos();
 
-    // Mostrar info de cada animal
-    cout << "\n--- Información de los animales ---\n";
-    x.mostrar_info();
-    g.mostrar_info();
-    l.mostrar_info();
-    a.mostrar_info();
-
-    // Alimentar a los animales
     cout << "\n--- Alimentando animales ---\n";
-    x.alimentar();
-    g.alimentar();
-    l.alimentar();
-    a.alimentar();
+    zoo.alimentarTodos();
 
-    return 0; // Fin del programa
+    return 0;
 }

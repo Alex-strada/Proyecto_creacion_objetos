@@ -1,31 +1,17 @@
 //  gorila.cpp
 //  Created by Alejandro Estrada Pérez on 13/11/25.
-//COMPILAR: g++ -c gorila.cpp
+//COMPILAR: g++ -c Gorila.cpp
 
 
-#include <iostream>   // Permite usar cout
-#include <string>     // Permite usar strings
-using namespace std;
+#include "gorila.hpp"
 
-// Clase que representa un gorila
-class Gorila {
-private:
-    string nombre;   // Nombre del gorila
-    int edad;        // Edad del gorila
+Gorila::Gorila(string n, int e) : Animal(n, e) {}
 
-public:
-    // Constructor: inicializa los atributos
-    Gorila(string n, int e) : nombre(n), edad(e) {}
+string Gorila::alimentar() const {
+    return "🦍 El gorila " + nombre + " está comiendo hojas y frutas.";
+}
 
-    // Método para alimentar al gorila
-    void alimentar() {
-        cout << "🦍 Alimentando al gorila " << nombre
-             << " con hojas y frutas." << endl;
-    }
+string Gorila::mostrar_info() const {
+    return "Gorila | Nombre: " + nombre + " | Edad: " + to_string(edad);
+}
 
-    // Método que muestra la información del gorila
-    void mostrar_info() {
-        cout << "Gorila | Nombre: " << nombre
-             << " | Edad: " << edad << " años" << endl;
-    }
-};
