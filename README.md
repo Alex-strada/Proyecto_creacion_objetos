@@ -145,7 +145,7 @@ class Visitante {
     + restarDinero(monto : int) : bool
 }
 
-#### UML
+# UML
 <img width="1544" height="1514" alt="image" src="https://github.com/user-attachments/assets/3ca39a0c-01db-428c-923f-9a46820a2d98" />
 
 
