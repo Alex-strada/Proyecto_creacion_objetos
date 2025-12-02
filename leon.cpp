@@ -5,13 +5,8 @@
 
 
 #include "leon.hpp"
+using namespace std;
 
-Leon::Leon(string n, int e) : Animal(n, e) {}
+Leon::Leon() : Animal("Leon") {}
 
-string Leon::alimentar() const {
-    return "🦁 El león " + nombre + " está comiendo carne fresca.";
-}
-
-string Leon::mostrar_info() const {
-    return "León | Nombre: " + nombre + " | Edad: " + to_string(edad);
-}
+Leon::Leon(string n) : Animal(n) {}

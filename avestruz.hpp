@@ -8,13 +8,12 @@
 #define AVESTRUZ_HPP
 
 #include "animal.hpp"
+#include <string>
 
 class Avestruz : public Animal {
 public:
-    Avestruz(string n, int e);
-
-    string alimentar() const override;
-    string mostrar_info() const override;
+    Avestruz();
+    Avestruz(std::string n);
 };
 
 #endif

@@ -4,14 +4,8 @@
 
 
 #include "gorila.hpp"
+using namespace std;
 
-Gorila::Gorila(string n, int e) : Animal(n, e) {}
+Gorila::Gorila() : Animal("Gorila") {}
 
-string Gorila::alimentar() const {
-    return "🦍 El gorila " + nombre + " está comiendo hojas y frutas.";
-}
-
-string Gorila::mostrar_info() const {
-    return "Gorila | Nombre: " + nombre + " | Edad: " + to_string(edad);
-}
-
+Gorila::Gorila(string n) : Animal(n) {}

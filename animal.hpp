@@ -8,25 +8,26 @@
 #define ANIMAL_HPP
 
 #include <string>
-using namespace std;
 
 class Animal {
 protected:
-    string nombre;
-    int edad;
+    std::string nombre;
+    int hambre;
+    int sed;
+    int felicidad;
 
 public:
-    Animal(string n, int e);
-    virtual ~Animal() {}
+    Animal();
+    Animal(std::string n);
 
-    string getNombre() const;
-    int    getEdad() const;
+    std::string getNombre();
+    int getHambre();
+    int getSed();
+    int getFelicidad();
 
-    void setNombre(string n);
-    void setEdad(int e);
-
-    virtual string alimentar() const = 0;      // devuelve texto
-    virtual string mostrar_info() const = 0;   // devuelve texto
+    void setHambre(int h);
+    void setSed(int s);
+    void setFelicidad(int f);
 };
 
 #endif

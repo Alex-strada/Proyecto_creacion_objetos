@@ -9,13 +9,12 @@
 #define LEON_HPP
 
 #include "animal.hpp"
+#include <string>
 
 class Leon : public Animal {
 public:
-    Leon(string n, int e);
-
-    string alimentar() const override;
-    string mostrar_info() const override;
+    Leon();
+    Leon(std::string n);
 };
 
 #endif

@@ -9,13 +9,12 @@
 #define GORILA_HPP
 
 #include "animal.hpp"
+#include <string>
 
 class Gorila : public Animal {
 public:
-    Gorila(string n, int e);
-
-    string alimentar() const override;
-    string mostrar_info() const override;
+    Gorila();
+    Gorila(std::string n);
 };
 
 #endif

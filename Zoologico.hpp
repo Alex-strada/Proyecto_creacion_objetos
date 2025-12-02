@@ -8,19 +8,17 @@
 #ifndef ZOOLOGICO_HPP
 #define ZOOLOGICO_HPP
 
-#include "animal.hpp"
+#include "gorila.hpp"
+#include "leon.hpp"
+#include "avestruz.hpp"
 
 class Zoologico {
-private:
-    Animal* animales[10];   // Arreglo estático
-    int count;              // Cantidad actual de animales
-
 public:
-    Zoologico();
+    Gorila gorilas[3];
+    Leon leones[3];
+    Avestruz avestruces[3];
 
-    void agregarAnimal(Animal* a);     // Agregación
-    void mostrarTodos() const;
-    void alimentarTodos() const;
+    Zoologico();
 };
 
 #endif

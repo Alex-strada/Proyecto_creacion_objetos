@@ -4,13 +4,8 @@
 
 
 #include "avestruz.hpp"
+using namespace std;
 
-Avestruz::Avestruz(string n, int e) : Animal(n, e) {}
+Avestruz::Avestruz() : Animal("Avestruz") {}
 
-string Avestruz::alimentar() const {
-    return "🦤 El avestruz " + nombre + " está comiendo granos y vegetales.";
-}
-
-string Avestruz::mostrar_info() const {
-    return "Avestruz | Nombre: " + nombre + " | Edad: " + to_string(edad);
-}
+Avestruz::Avestruz(string n) : Animal(n) {}
