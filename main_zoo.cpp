@@ -17,6 +17,7 @@ using namespace std;
 
 void mostrarEstado(Animal &a) {
     cout << "\nEstado del animal:\n";
+    cout << "El maximo para darle de comida y agua es de <100>"
     cout << "Hambre: " << a.getHambre() << endl;
     cout << "Sed: " << a.getSed() << endl;
     cout << "Felicidad: " << a.getFelicidad() << endl;
@@ -25,10 +26,10 @@ void mostrarEstado(Animal &a) {
 void alimentarAnimal(Animal &a) {
     int comida, agua;
     mostrarEstado(a);
-    cout << "Cuánta comida quieres darle? ";
+    cout << "Cuanta comida quieres darle? ";
     cin >> comida;
 
-    cout << "Cuánta agua quieres darle? ";
+    cout << "Cuanta agua quieres darle? ";
     cin >> agua;
 
     a.setHambre(a.getHambre() + comida);
@@ -46,14 +47,16 @@ int main() {
     Avestruz av("Rappi Dash");
 
     char opcionMenu;
-
-    cout << "===== BIENVENIDO AL ZOOLÓGICO =====\n";
+    cout << "--------------------------------------\n";
+    cout << "------- BIENVENIDO AL ZOOLÓGICO ------\n";
+    cout << "--------------------------------------\n";
 
     while (true) {
         cout << "\nMENU PRINCIPAL:\n";
-        cout << "A) Comprar souvenirs\n";
-        cout << "B) Alimentar un animal\n";
-        cout << "C) Salir\n";
+        cout << "------------------\n";
+        cout << "a) Comprar souvenirs\n";
+        cout << "b) Alimentar un animal\n";
+        cout << "c) Salir\n";
         cout << "Elige una opción: ";
         cin >> opcionMenu;
 
@@ -62,18 +65,20 @@ int main() {
 
             char seguirComprando = 'S';
 
-            while (seguirComprando == 'S' || seguirComprando == 's') {
+             while (seguirComprando == 'S' || seguirComprando == 's') {
                 cout << "\nTIENDA DE SOUVENIRS\n";
-                cout << "A) Peluche de León ($120)\n";
-                cout << "B) Peluche de Gorila ($150)\n";
-                cout << "C) Avestruz mini ($90)\n";
-                cout << "D) Llavero ($40)\n";
-                cout << "E) Gorra Zoo ($80)\n";
+                cout << "a) Peluche de Leon: $120\n";
+                cout << "b) Peluche de Gorila: $150\n";
+                cout << "b) Avestruz mini: $90\n";
+                cout << "d) Llavero: $40\n";
+                cout << "e) Gorra Zoo: $80\n";
+                cout << "f) Para salir (f) \n";
                 cout << "Elige una opción: ";
 
                 char articulo;
                 cin >> articulo;
-
+                
+                
                 int precio = 0;
 
                 if (articulo == 'A' || articulo == 'a') precio = 120;
@@ -81,15 +86,18 @@ int main() {
                 else if (articulo == 'C' || articulo == 'c') precio = 90;
                 else if (articulo == 'D' || articulo == 'd') precio = 40;
                 else if (articulo == 'E' || articulo == 'e') precio = 80;
+                else if (articulo == 'F' || articulo == 'f')
+                    seguirComprando = 'N';
+                
                 else {
-                    cout << "Opción inválida.\n";
+                    cout << "Opción no valida.\n";
                     continue;
                 }
 
                 if (!v.restarDinero(precio)) {
-                    cout << "No tienes suficiente dinero. Compra cancelada.\n";
+                    cout << "No tienes suficiente dinero. Compra cancelada\n";
                 } else {
-                    cout << "Compra realizada. Dinero restante: $" << v.getDinero() << endl;
+                    cout << "Gracias! su dinero restante es: $" << v.getDinero() << endl;
                 }
 
                 cout << "¿Quieres seguir comprando? (S/N): ";
@@ -97,30 +105,31 @@ int main() {
             }
         }
         else if (opcionMenu == 'B' || opcionMenu == 'b') {
-            cout << "\nElige el animal:\n";
-            cout << "A) Gorila\n";
-            cout << "B) León\n";
-            cout << "C) Avestruz\n";
-            cout << "Opción: ";
+        cout << "\nElige el animal:\n";
+        cout << "G) Gorila\n";
+        cout << "L) Leon\n";
+        cout << "A) Avestruz\n";
+        cout << "Opción: ";
+        
+        char alimentar_an;
+        cin >> alimentar_an;
 
-            char aOpc;
-            cin >> aOpc;
-
-            if (aOpc == 'A' || aOpc == 'a')
+            if (alimentar_an == 'G' || alimentar_an == 'g')
                 alimentarAnimal(g);
-            else if (aOpc == 'B' || aOpc == 'b')
+            else if (alimentar_an == 'L' || alimentar_an == 'l')
                 alimentarAnimal(l);
-            else if (aOpc == 'C' || aOpc == 'c')
+            else if (alimentar_an == 'A' || alimentar_an == 'a')
                 alimentarAnimal(av);
             else
-                cout << "Opción incorrecta.\n";
+                cout << "Opcion incorrecta\n";
         }
         else if (opcionMenu == 'C' || opcionMenu == 'c') {
-            cout << "\nGracias por visitar el zoológico!\n";
+            cout << "\nGracias por visitar el ZOO!\n";
+            cout <<"Regrese pronto";
             break;
         }
         else {
-            cout << "Opción inválida.\n";
+            cout << "Opcion no valida\n";
         }
     }
 
