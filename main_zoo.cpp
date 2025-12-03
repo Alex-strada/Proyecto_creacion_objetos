@@ -17,7 +17,7 @@ using namespace std;
 
 void mostrarEstado(Animal &a) {
     cout << "\nEstado del animal:\n";
-    cout << "El maximo para darle de comida y agua es de <100>"
+    cout << "El maximo para darle de comida y agua es de <100>";
     cout << "Hambre: " << a.getHambre() << endl;
     cout << "Sed: " << a.getSed() << endl;
     cout << "Felicidad: " << a.getFelicidad() << endl;
