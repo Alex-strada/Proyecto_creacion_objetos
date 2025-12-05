@@ -3,6 +3,11 @@
 Este proyecto forma parte de la materia *Pensamiento Orientado a Objetos* y modela animales de un zoológico mediante clases en C++.
 
 ---
+## Las subcompetencias que quiero que se evaluen son las siguientes:
+
+- *Avance 1*
+- *Avance 2*
+- *Avence 3*
 
 ## Contexto
 
