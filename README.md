@@ -146,7 +146,7 @@ class Visitante {
 }
 
 # UML
-<img width="1544" height="1514" alt="image" src="https://github.com/user-attachments/assets/3ca39a0c-01db-428c-923f-9a46820a2d98" />
+<img width="1224" height="1570" alt="image" src="https://github.com/user-attachments/assets/c1c12db3-a6aa-48c8-98a7-a32bc6f01c82" />
 
 
 
