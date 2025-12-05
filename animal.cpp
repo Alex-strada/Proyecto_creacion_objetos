@@ -45,3 +45,51 @@ void Animal::setFelicidad(int f) {
     if (f < 0) f = 0;
     felicidad = f;
 }
+
+/*   NUEVA FUNCIÓN mostrarEstado
+Crea una variable tipo string llamada "estado".
+Empieza con un texto y muestra el nombre del animal.
+Como nombre es string, se puede concatenar con " + " */
+
+string Animal::mostrarEstado() {
+    string estado = "\n\tEstado del animal\n  nombre: " + nombre + "\n";
+    
+    //(+=) significa “agregar al final de lo que ya tiene este string”
+    estado += "Maximo por comida/agua <100>\n";
+    
+    //Como felicidad y hambre es un int, utilizamos
+    estado += "Hambre: " + to_string(hambre) + "\n";
+    estado += "Sed: " + to_string(sed) + "\n";
+    
+    //El "to_string()" Convierte números a texto
+    estado += "Felicidad: " + to_string(felicidad) + "\n";
+    
+    //Regresa el mensaje al main
+    return estado;
+
+}
+
+
+//      NUEVA FUNCIÓN alimentar
+void Animal::alimentar() {
+    
+    //Las variables son enteros que son comida y agua
+    int comida, agua;
+    
+    //IMprime el Estado que es la funcion de arriba
+    cout << mostrarEstado();
+    
+    cout << "Cuanta comida quieres darle? ";
+    cin >> comida;
+
+    cout << "Cuanta agua quieres darle? ";
+    cin >> agua;
+    //Los setters de la funcion para pedirlos
+    setHambre(hambre + comida);
+    setSed(sed + agua);
+    setFelicidad(felicidad + 10);
+    
+    //Muestra el nuevo estado con un cout
+    cout << "\n--- Nuevo estado después de alimentar ---\n";
+    cout << mostrarEstado();
+}
