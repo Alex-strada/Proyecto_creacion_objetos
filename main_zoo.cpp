@@ -9,129 +9,148 @@
 #include <string>
 using namespace std;
 
+// Incluyo nuestras clases
 #include "animal.hpp"
 #include "gorila.hpp"
 #include "leon.hpp"
 #include "avestruz.hpp"
 #include "visitante.hpp"
 
-void mostrarEstado(Animal &a) {
-    cout << "\nEstado del animal:\n";
-    cout << "El maximo para darle de comida y agua es de <100>";
-    cout << "Hambre: " << a.getHambre() << endl;
-    cout << "Sed: " << a.getSed() << endl;
-    cout << "Felicidad: " << a.getFelicidad() << endl;
-}
 
-void alimentarAnimal(Animal &a) {
-    int comida, agua;
-    mostrarEstado(a);
-    cout << "Cuanta comida quieres darle? ";
-    cin >> comida;
-
-    cout << "Cuanta agua quieres darle? ";
-    cin >> agua;
-
-    a.setHambre(a.getHambre() + comida);
-    a.setSed(a.getSed() + agua);
-    a.setFelicidad(a.getFelicidad() + 10);
-
-    mostrarEstado(a);
-}
+//               MAIN DEL ZOOLOGICO
 
 int main() {
+
+    //creo el visitante con $500 (definido en el constructor)
     Visitante v;
 
+    //Creo un gorila, leon y avestruz con nombre inicial
     Gorila g("King Kong");
     Leon l("Simba");
     Avestruz av("Rappi Dash");
 
-    char opcionMenu;
+    char opcionMenu; //Variable que guarda la opción del menú principal
+
+    // Mensaje de bienvenida
     cout << "--------------------------------------\n";
     cout << "------- BIENVENIDO AL ZOOLÓGICO ------\n";
     cout << "--------------------------------------\n";
 
+    //  BUCLE WHILE PRINCIPAL
     while (true) {
-        cout << "\nMENU PRINCIPAL:\n";
-        cout << "------------------\n";
-        cout << "a) Comprar souvenirs\n";
-        cout << "b) Alimentar un animal\n";
-        cout << "c) Salir\n";
-        cout << "Elige una opción: ";
-        cin >> opcionMenu;
 
+    //Se muestra el menú principal cada vez que el ciclo inicia
+    cout << "\nMENU PRINCIPAL:\n";
+    cout << "------------------\n";
+    cout << "a) Comprar souvenirs\n";
+    cout << "b) Alimentar un animal\n";
+    cout << "c) Salir\n";
+    cout << "Elige una opción: ";
+    cin >> opcionMenu;
+
+      
+    // OPCIÓN A → COMPRAR SOUVENIRS
+      
         if (opcionMenu == 'A' || opcionMenu == 'a') {
+
+            //Mostramos dinero actual del visitante
             cout << "\nTu dinero actual: $" << v.getDinero() << endl;
 
+            //Variable que controla si sigue comprando
             char seguirComprando = 'S';
 
-             while (seguirComprando == 'S' || seguirComprando == 's') {
-                cout << "\nTIENDA DE SOUVENIRS\n";
-                cout << "a) Peluche de Leon: $120\n";
-                cout << "b) Peluche de Gorila: $150\n";
-                cout << "b) Avestruz mini: $90\n";
-                cout << "d) Llavero: $40\n";
-                cout << "e) Gorra Zoo: $80\n";
-                cout << "f) Para salir (f) \n";
-                cout << "Elige una opción: ";
+            //Bucle interno de compra
+            while (seguirComprando == 'S' || seguirComprando == 's') {
 
-                char articulo;
-                cin >> articulo;
-                
-                
-                int precio = 0;
+            cout << "\nTIENDA DE SOUVENIRS\n";
+            cout << "a) Peluche de Leon: $120\n";
+            cout << "b) Peluche de Gorila: $150\n";
+            cout << "c) Avestruz mini: $90\n";
+            cout << "d) Llavero: $40\n";
+            cout << "e) Gorra Zoo: $80\n";
+            cout << "f) Salir de la tienda\n";
+            cout << "Elige una opción: ";
 
-                if (articulo == 'A' || articulo == 'a') precio = 120;
-                else if (articulo == 'B' || articulo == 'b') precio = 150;
-                else if (articulo == 'C' || articulo == 'c') precio = 90;
-                else if (articulo == 'D' || articulo == 'd') precio = 40;
-                else if (articulo == 'E' || articulo == 'e') precio = 80;
-                else if (articulo == 'F' || articulo == 'f')
-                    seguirComprando = 'N';
-                
-                else {
-                    cout << "Opción no valida.\n";
-                    continue;
-                }
+            char articulo;
+            cin >> articulo;
 
+            int precio = 0;   //Variable que guardará el precio elegido
+
+                //Dependiendo la letra es el articulo con un precio
+            if (articulo == 'A' || articulo == 'a') precio = 120;
+            else if (articulo == 'B' || articulo == 'b') precio = 150;
+            else if (articulo == 'C' || articulo == 'c') precio = 90;
+            else if (articulo == 'D' || articulo == 'd') precio = 40;
+            else if (articulo == 'E' || articulo == 'e') precio = 80;
+
+            //Si selecciona "f" se sale de la tienda
+            else if (articulo == 'F' || articulo == 'f') {
+                cout << "\nSaliendo de la tienda...\n";
+            break; //  Este break solo sale del bucle de compras
+            }
+
+            else {
+                cout << "Opcion no valida.\n";
+                continue; //Regresa al menú de compras
+            }
+
+                // restamos el dinero (restarDinero devuelve bool) un boleano (si/no)
                 if (!v.restarDinero(precio)) {
+                    //Si es falso, no tiene dinero
                     cout << "No tienes suficiente dinero. Compra cancelada\n";
-                } else {
-                    cout << "Gracias! su dinero restante es: $" << v.getDinero() << endl;
+                }
+                else {
+                    //si es suficiente dinero usarmos el getter de Dinero para devolverlo y se imprime
+                    cout << "Gracias! Su dinero restante es: $"
+                         << v.getDinero() << endl;
                 }
 
+                //Preguntamos si quiere seguir comprando
                 cout << "¿Quieres seguir comprando? (S/N): ";
                 cin >> seguirComprando;
-            }
+          }
         }
-        else if (opcionMenu == 'B' || opcionMenu == 'b') {
-        cout << "\nElige el animal:\n";
-        cout << "G) Gorila\n";
-        cout << "L) Leon\n";
-        cout << "A) Avestruz\n";
-        cout << "Opción: ";
+
+        // opcion b alimentar al animal
         
+        else if (opcionMenu == 'B' || opcionMenu == 'b') {
+
+        cout << "\nElige el animal:\n";
+        cout << "g) Gorila\n";
+        cout << "l) Leon\n";
+        cout << "a) Avestruz\n";
+        cout << "Opción: ";
+        //variable de alimentar animal
         char alimentar_an;
         cin >> alimentar_an;
 
-            if (alimentar_an == 'G' || alimentar_an == 'g')
-                alimentarAnimal(g);
+        //Dependiendo de la letra alimentamos al animal seleccionado
+        if (alimentar_an == 'G' || alimentar_an == 'g')
+                g.alimentar();
+
             else if (alimentar_an == 'L' || alimentar_an == 'l')
-                alimentarAnimal(l);
+                l.alimentar();
+
             else if (alimentar_an == 'A' || alimentar_an == 'a')
-                alimentarAnimal(av);
+                av.alimentar();
+
             else
                 cout << "Opcion incorrecta\n";
         }
+
+        // opcion "c" salir del programa
         else if (opcionMenu == 'C' || opcionMenu == 'c') {
             cout << "\nGracias por visitar el ZOO!\n";
-            cout <<"Regrese pronto";
+            cout << "Regrese pronto.\n";
             break;
         }
+
+        // Cualquier letra que no sea a, b, c
         else {
-            cout << "Opcion no valida\n";
+            cout << "Opción NO válida. Intenta otra vez.\n";
         }
-    }
+
+    } //  Fin del while principal
 
     return 0;
 }
