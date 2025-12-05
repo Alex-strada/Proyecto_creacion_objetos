@@ -6,8 +6,20 @@ Este proyecto forma parte de la materia *Pensamiento Orientado a Objetos* y mode
 ## Las subcompetencias que quiero que se evaluen son las siguientes:
 
 - *Avance 1*
+- "Codifico métodos y atributos de clase correctamente. (constructores, getters, setters) Avance 1"
+-"Compruebo el acceso a los atributos y métodos de la clase (encapsulamiento correcto, mando a llamar los objetos de forma útil). Avance 1"
+-"Cumplo con estándares en mi repositorio: tiene un readme claro que explica el proyecto  (para que sirve,  para que no sirve y como se usa), no tiene archivos basura o versiones pasadas. Avance 1"
+-"Uso una herramienta para control de versiones (github) Avance 1"
 - *Avance 2*
+- "Modelo un diagrama de clase útil para solucionar un problema utilizando UML.
+Avance 2"
 - *Avence 3*
+- "Utilizo el concepto de composición (o agreagación) en el diagrama de clases. Avance 3"
+-"Implemento las clases en c++ siguiendo el diseño del diagrama de clases en UML. Avance 3"
+-"Implemento herencia de manera correcta y util Avance 3"
+-"Impemento composición (o agregación) sieguiendo mi diagrama de clases Avance 3"
+-"Implemento clases apegadas a requerimientos a partir de un modelo. Avance 3"
+-"Sigo estándares en todo mi código fuente: estilo, sangrías, comentarios, nombres, etc... Avance 3"
 
 ## Contexto
 
